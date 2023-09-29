@@ -124,33 +124,102 @@ links in the navigation are in the hover or focus state.*/
 }
 
 /* Step 3: Write selector/rule property to style all elements when in focus*/
-
+*:focus {
+  border: 2px solid;
+}
 /* Step 4: Write selector/rule property to style the container */
-
+.container {
+  display: grid;
+  grid-template-columns: 1fr 5fr 1fr;
+  gap: 15px;
+}
 
 /* Step 5: Write selector/rule property to add the background image to the 
 first div in the grid  and place it in the grid. */
-
-
+.container > div:first-child {
+  grid-column: 1 / 4;
+  min-height: 500px;
+  background-image: url(images/header.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
 
 /* Steps 6 and 7: Write the selector/rule properties to add place the next elements in the next
  four rows in the grid. */
 
       /*This will be a lot of rules.... but be strategic and combine seletors*/
+ .about {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+}
 
+.method {
+  grid-column: 2 / 3;
+  grid-row: 3 / 4;
+}
+
+.clients {
+  grid-column: 2 / 3;
+  grid-row: 4 / 5;
+}
+
+.contact {
+  grid-column: 2 / 3;
+  grid-row: 5 / 6;
+}
+
+.about-image,
+.method-image,
+.clients-image,
+.contact-image {
+  grid-column: 1 / 4;
+  max-height: 600px;
+  overflow: hidden;
+  grid-row: 2 / 6;
+} 
 
  /* Step 8: Write the selector/rule property to style the .text-block class. */
+ .text-block {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-height: 250px;
+  overflow: hidden;
+}
 
-
+.text-block p {
+  text-align: center;
+}
 /* Add your media query here */
 
 
   /* Step 9: Write the selector/rule property to style the nav element */
-
+  nav {
+    grid-column: 5 / 6;
+    padding: 30px 0;
+  }  
  
   /* Step 10: Write the selector/rule property to update the .container class */
-
+  .container {
+    display: grid;
+    grid-template-columns: 50px auto 500px auto 50px;
+  }
+  
 
   /* Steps 11 and 12: Update the grid-column property of the grid's children (where-needed)*/
-
+  .about,
+  .clients,
+  .method-image,
+  .contact-image {
+    grid-column: 3 / 5;
+  }
+  
+  .method,
+  .contact,
+  .about-image,
+  .clients-image {
+    grid-column: 2 / 4;
+  }
+    
 
